@@ -100,7 +100,8 @@ function SubmitRestaurant() {
   const onSubmit = async (form) => {
     // 서버 DTO에 맞게 필드 매핑
     const payload = {
-      name: form.restaurantName,
+      // name: form.restaurantName,
+      restaurantName: form.restaurantName,
       category: form.category,
       location: form.location,
       priceRange: form.priceRange || null,
@@ -109,10 +110,12 @@ function SubmitRestaurant() {
         ? form.recommendedMenu.split(',').map(s => s.trim()).filter(Boolean)
         : [],
       review: form.review || null,
-      submitter: {
-        name: form.submitterName || null,
-        email: form.submitterEmail || null
-      }
+      // submitter: {
+      //   name: form.submitterName || null,
+      //   email: form.submitterEmail || null
+      // }
+      submitterName: form.submitterName || '',
+      submitterEmail: form.submitterEmail || ''
     };
 
     try {
