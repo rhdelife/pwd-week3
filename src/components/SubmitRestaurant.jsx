@@ -116,7 +116,7 @@ function SubmitRestaurant() {
     };
 
     try {
-      const res = await api.post('/api/restaurants', payload);
+      const res = await api.post('/api/submissions', payload);
       // 성공 UX
       setSubmitted(true);
       toast.success('맛집이 성공적으로 제보되었습니다! 🎉');
